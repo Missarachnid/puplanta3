@@ -1,0 +1,327 @@
+/*Main App*/
+#App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 0 60px 0;
+  background-color: none;
+  text-align: center;
+}
+
+#main {
+  height: 100%;
+  padding: 40px;
+  margin-bottom: 80px;
+
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.headline {
+  margin-bottom: 40px;
+  font-size: 2.6rem;
+}
+
+#privacy,
+#home,
+#sign-up-page,
+#sign-in-page,
+#park-item,
+#account,
+#about {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px rgba(135, 0, 0, 0.3);
+  height: auto;
+}
+
+/*Header*/
+#app-header {
+background: none;
+width: 100%;
+border-bottom: 1px solid #870000;
+box-shadow: 0 1px 5px 1px rgba(135, 0, 0, 0.3);
+}
+
+.puplanta-logo {
+  width: auto;
+}
+.nav-link {
+  color: black;
+}
+.nav-link:hover, .nav-link:focus {
+  color: #870000;
+  font-weight: bold;
+}
+
+/*footer*/
+#footer {
+  background-color: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px 0 0 0;
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid #870000;
+  box-shadow: 0 -1px 5px 1px rgba(135, 0, 0, 0.3);
+  background-color: #ff9966;
+}
+
+#footer a {
+  color: black;
+}
+
+/* Home */
+#georgia {
+  max-width: 100%;
+}
+
+#pup-home {
+  margin: 0;
+}
+.pup-text {
+  padding: auto;
+}
+
+
+
+/* About */
+
+#github-link {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.seperator {
+  margin-top: 40px;
+}
+
+.dog-card {
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Sign In Page */
+.forms-format {
+  background-color: white;
+  text-align: center;
+  box-shadow: 1px 1px 5px 1px rgba(135, 0, 0, 0.3);
+}
+
+#sign-in-form {
+  margin: 20px;
+}
+
+.signup-spacer,
+.signin-spacer {
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  padding-left: 10px;
+}
+
+.form-button {
+  color: black;
+  background-color: #ff9966;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+/* Parks */
+
+#parks {
+  text-align: center;
+}
+
+.parks-item {
+  list-style-type: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.parks-item p {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  margin-bottom: 0;
+}
+
+.card-main {
+  height: 368px;
+  max-width: 300px; 
+  border: none;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+  margin: 20px auto 10px auto;
+}
+
+.card-main a {
+  color: black;
+}
+
+.card-main a:hover {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+.card-main-image {
+ height: 120px;
+ max-width: 120px;
+ background-size: cover;
+ margin: 0 auto 20px auto;
+ border: 1px solid #870000;
+ box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+}
+
+.paw-button {
+  background: url('./img/paws.svg') center no-repeat;
+  background-size: contain;
+  min-width: 60px;
+  border: 1px ridge #870000;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.card-text-seperator {
+  height: 90px;
+}
+
+.dog-img {
+  width: 100%;
+}
+
+/*  Map */
+#map-placement {
+  height: 440px;
+}
+
+#myMap {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+}
+
+/* Info Windows */
+.card-info-image {
+  height: 60px;
+  width: auto;
+  background-size: contain;
+
+  border: 3px solid #ff9966;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+}
+
+.paw-button-info {
+  width: 50px;
+  background: url('./img/paws.svg') center no-repeat;
+  background-size: contain;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Stores */
+#stores {
+  text-align: center;
+}
+
+.card-stores-image {
+  max-height: 60px;
+  max-width: 100px;
+  background-size: cover;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+  margin: 6px auto 20px auto;
+  border: 1px solid #870000;
+}
+.card-stores {
+  height: 320px;
+  max-width: 300px;
+  border: none;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+  margin: 20px auto 10px auto;
+}
+
+.card-stores a {
+  color: black;
+}
+.card-stores a:hover {
+  text-decoration: none;
+  color: black
+}
+
+/* Vote related */
+.paws-img {
+  height: 20px;
+  margin: 5px 10px;
+  width: auto;
+}
+
+.paw-seperator {
+  margin: 20px;
+}
+
+.paws {
+  padding: 10px;
+}
+
+.paws-vote {
+  height: 60px;
+  width: auto;
+  margin: 20px;
+}
+
+#park-item-image {
+  height: 200px;
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  border: 2px solid #870000;
+  margin-bottom: 20px;
+}
+
+.paws-park-item {
+  margin: 20px;
+}
+
+.vote {
+  border: 2px solid #870000;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin-top: 20px;
+}
+
+#sign-out {
+  padding-left: 0;
+  border: none;
+  background: none;
+  margin: 8px auto 0 auto; 
+}
+@media screen and (min-width: 768px) {
+  #sign-out {
+    padding-left: 20px;
+  }
+ }
+
+ /* Privacy*/
+
+ #privacy p, #privacy li {
+   text-align: left;
+ }

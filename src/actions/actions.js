@@ -1,0 +1,10 @@
+export const UPDATE_USER = {type: 'UPDATE_USER'};
+export const LOAD_PARKS = {type: 'LOAD_PARKS'};
+export const LOAD_STORES = {type: 'LOAD_STORES'};
+export const TOGGLE_MENU = {type: 'TOGGLE_MENU'};
+export const SHOW_ERROR = {type: 'SHOW_ERROR'};
+export const SIGNUP_CHANGE = {type: 'SIGNUP_CHANGE'};
+export const SIGNIN_CHANGE = {type: 'SIGNIN_CHANGE'};
+export const SIGNOUT_CHANGE = {type: 'SIGNOUT_CHANGE'}
+export const CHANGE_PASSWORD = {type: 'UPDATE_PASSWORD'};
+export const FORGOT_PASSWORD = {type: 'FORGOT_PASSWORD'};
