@@ -2,6 +2,10 @@
 
 [Puplanta](http://puplanta.com/)
 
+###  This version will be fixing errors, updating technology and adding some features.
+
+The last code version can be seen here: [Puplanta - old](https://github.com/Missarachnid/puplanta2)
+
 ##  A React, Redux and Firebase app for rating local dog parks and stores
 This site shows all the dog parks and dog related stores in the greater Atlanta area. 
 Clients can do the following:
@@ -18,12 +22,17 @@ Clients can do the following:
 *  Redux
 *  Auth and DB in Firebase
 *  Hosted on AWS
+####  This iteration will add
+*  PWA with Workbox
+*  Testing with Jest
 
 ###  Improvements I will make 
 *  Cache assets for offline usablity(PWA)
 *  Set up testing
-*  User Docker
-*  Possible image lazy loading
+*  Fixing Google Maps issues
+*  Lazy image loading
+*  Update UI
+*  Fixing voting issues, and other small issues
 
 ###  Tutorials and Examples that helped me complete this project
 * Felix Heck's answer on [hansnode.com](https://hashnode.com/post/google-maps-api-onclick-on-marker-close-infowindow-of-other-markers-ciou68dw708x33353les71nyi)
