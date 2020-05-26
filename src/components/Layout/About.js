@@ -17,9 +17,9 @@ const About = () => {
             </div>
             <div className='seperator'>
             <div>
-              <img className='seperator-paw' src={pawUp}></img>
-              <img className='seperator-paw' src={pawUp}></img>
-              <img className='seperator-paw' src={pawUp}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
               </div>
               <h2 className='about-text copy'>The code for this site</h2>
               <p>This is a project in my portfolio as a JavaScript developer. I am a 'dog person' I decided to make this site to show my skillset. Please checkout the code for this site on my GitHub account.</p>
@@ -32,9 +32,9 @@ const About = () => {
               </div>
             <div className='seperator'>
               <div>
-              <img className='seperator-paw' src={pawUp}></img>
-              <img className='seperator-paw' src={pawUp}></img>
-              <img className='seperator-paw' src={pawUp}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
+              <img className='seperator-paw' src={pawUp} alt={""}></img>
               </div>
               <h3 className='about-text copy'>Paying the Pet Tax</h3>
               <p>These are my 3 best friends. They keep my life interesting.</p>

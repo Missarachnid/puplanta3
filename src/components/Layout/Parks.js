@@ -19,7 +19,7 @@ import { withRouter } from 'react-router-dom';
           <div className='card-body card-main-body'>
           <Link to={`/park/${el.id}`}>
           <img src={el.image} className='card-img-top card-main-image rounded' alt={`${el.title}.` } />
-          <div className='card-text-seperator'>
+          <div className='card-text-seperator park-text'>
             <h5 className='card-title card-main-title'>{el.title}</h5>
             <p className='card-text card-main-text'>{el.address}</p>
             </div>

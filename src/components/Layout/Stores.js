@@ -15,18 +15,20 @@ class Stores extends React.Component {
           <div className='col-sm-12 col-md-6 col-lg-4' key={el.id}>
             <div className='card card-stores' >
               <div className='card-body card-main-body'>
-              <Link to={`/store/${el.id}`}>
-              <img src={el.image} className='card-img-top card-stores-image rounded' alt={`An logo for ${el.title}.` } />
-              <div className='card-text-seperator'>
-                <h5 className='card-title card-main-title'>{el.brand}</h5>
-                <p className='card-text card-main-text'>{el.address}</p>
-                </div>
-                <div className='paws'>
-                  <img src={pawUp} className='paws-img' alt='A paw pointing upward, like a thumbs up'/><span>{el.votes.up}</span>
-                  <span className='paw-seperator'></span>
-                  <img src={pawDown} className='paws-img' alt='A paw pointing downward, like a thumb up'/><span>{el.votes.down}</span>
-                </div>
-                </Link>
+                <Link to={`/store/${el.id}`}>
+                  <div className='img-container'>
+                    <img src={el.image} className='card-img-top card-stores-image rounded' alt={`An logo for ${el.title}.` } />
+                  </div>
+                  <div className='card-text-seperator'>
+                    <h5 className='card-title card-main-title'>{el.brand}</h5>
+                    <p className='card-text card-main-text'>{el.address}</p>
+                    </div>
+                    <div className='paws'>
+                      <img src={pawUp} className='paws-img' alt='A paw pointing upward, like a thumbs up'/><span>{el.votes.up}</span>
+                      <span className='paw-seperator'></span>
+                      <img src={pawDown} className='paws-img' alt='A paw pointing downward, like a thumb up'/><span>{el.votes.down}</span>
+                    </div>
+                  </Link>
                 <button className='paw-button'>
                 <a href={el.website} rel='noopener noreferrer' target='_blank'>Info</a>
                 </button>

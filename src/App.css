@@ -95,7 +95,12 @@ box-shadow: 0 1px 5px 1px rgba(135, 0, 0, 0.3);
   padding: auto;
 }
 
-
+.main-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* About */
 
@@ -162,6 +167,10 @@ input {
   text-align: center;
 }
 
+.park-text {
+  margin-bottom: 16px;
+}
+
 .parks-item {
   list-style-type: none;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
@@ -174,7 +183,7 @@ input {
 }
 
 .card-main {
-  height: 368px;
+  min-height: 380px;
   max-width: 300px; 
   border: none;
   border: 1px solid lightgray;
@@ -259,21 +268,30 @@ input {
   text-align: center;
 }
 
+.img-container {
+  height: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-stores-image {
+  display: inline-block;
   max-height: 60px;
   max-width: 100px;
   background-size: cover;
   box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
-  margin: 6px auto 20px auto;
+  margin: auto;
   border: 1px solid #870000;
 }
 .card-stores {
-  height: 320px;
+  max-height: 320px;
   max-width: 300px;
   border: none;
   border: 1px solid lightgray;
   box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
-  margin: 20px auto 10px auto;
+  margin: 20px auto 0 auto;
 }
 
 .card-stores a {
