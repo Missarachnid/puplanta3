@@ -40,9 +40,6 @@ export default class Navigation extends React.Component {
       <NavItem  className='item'>
         <NavLink tag={NLink} to={ROUTES.SIGN_IN} >Sign In</NavLink>
       </NavItem>
-      <NavItem className='item'>
-        <NavLink tag={NLink} to={ROUTES.SIGN_UP} >Sign Up</NavLink>
-      </NavItem>
     </Nav>
   );
 

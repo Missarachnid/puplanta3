@@ -1,7 +1,7 @@
 import React from 'react';
 
 class InfoWindow extends React.Component {
-  render = () => (
+  render = (props) => (
     <div key={this.props.data.id}>
       <div className='card-body card-main-body'>
         <h5 className='card-title card-main-title'>{this.props.data.title}</h5>

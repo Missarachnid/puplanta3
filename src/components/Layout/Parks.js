@@ -39,7 +39,7 @@ import { withRouter } from 'react-router-dom';
 
     return(
       <div id='parks'>
-        <h1 className='headline'>Atlanta Dog Parks</h1>
+        <h1 className='headline copy'>Atlanta Dog Parks</h1>
         <div id='map-placement'>
         <MapContainer
         id='myMap'

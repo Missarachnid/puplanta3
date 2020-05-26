@@ -37,7 +37,7 @@ class Stores extends React.Component {
      
     return(
     <div id='stores'>
-       <h1 className='headline' >Atlanta Dog Stores</h1>
+       <h1 className='headline copy'>Atlanta Dog Stores</h1>
        <div id='map-placement'>
        <MapContainer
         id='myMap'
@@ -60,7 +60,7 @@ class Stores extends React.Component {
             });
             
             const createInfoWindow = (e, map) => {
-
+console.log("name ",  e);
               const infoWindow = new window.google.maps.InfoWindow({
                   content: '<div id="infoWindow" />',
                   position: { lat: e.latLng.lat(), lng: e.latLng.lng() },

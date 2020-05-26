@@ -9,7 +9,7 @@ import * as ROUTES from '../Routes/Routes';
 export default class SignInPage extends React.Component {
   render = () => (
     <div  className='jumbotron forms-format' id='sign-in-page'>
-      <h1 className='headline'>Sign In</h1>
+      <h1 className='headline copy'>Sign In</h1>
       <SignInForm 
       signinChange={this.props.signinChange} 
       signindata={this.props.signindata}

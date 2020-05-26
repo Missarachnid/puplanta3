@@ -9,7 +9,7 @@ export default class SignUpPage extends React.Component {
   render = () => (
     <div>
       <div className='jumbotron forms-format' id='sign-up-page'>
-        <h1 className='headline'>SignUp</h1>
+        <h1 className='headline copy'>SignUp</h1>
         <SignUpForm 
         signupChange={this.props.signupChange}
         signupdata={this.props.signupdata} error={this.props.error}

@@ -79,6 +79,10 @@ box-shadow: 0 1px 5px 1px rgba(135, 0, 0, 0.3);
   color: black;
 }
 
+.copy {
+  font-family: "Leckerli One";
+}
+
 /* Home */
 #georgia {
   max-width: 100%;
@@ -106,10 +110,19 @@ box-shadow: 0 1px 5px 1px rgba(135, 0, 0, 0.3);
   margin-top: 40px;
 }
 
+.seperator-paw {
+  max-width: 26px;
+  margin: 20px 30px 60px 30px;
+}
+
 .dog-card {
   margin-top: 20px;
   border-radius: 4px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  margin-top: 8px;
 }
 
 /* Sign In Page */
@@ -196,7 +209,7 @@ input {
   border-radius: 4px;
   box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
   font-size: 1.5em;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 .card-text-seperator {
@@ -209,13 +222,17 @@ input {
 
 /*  Map */
 #map-placement {
+  background-color: white;
   height: 440px;
-}
-
-#myMap {
+  padding: 20px;
   border: 1px solid lightgray;
   border-radius: 4px;
   box-shadow: 1px 1px 2px 1px rgba(135, 0, 0, 0.3);
+}
+
+#myMap {
+  border: 1px solid #870000;
+  border-radius: 4px;
 }
 
 /* Info Windows */
