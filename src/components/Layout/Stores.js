@@ -52,15 +52,15 @@ class Stores extends React.Component {
           this.props.stores.map((el) => {
             let temp = el;
             let marker = new window.google.maps.Marker({
-              position: { lat: el.lat, lng: el.lng },
+              position: { lat: temp.lat, lng: temp.lng },
               map: map,
-              title: el.title,
-              website: el.website,
-              address: el.address
+              title: temp.brand,
+              website: temp.website,
+              address: temp.address
             });
+           
             
             const createInfoWindow = (e, map) => {
-console.log("name ",  e);
               const infoWindow = new window.google.maps.InfoWindow({
                   content: '<div id="infoWindow" />',
                   position: { lat: e.latLng.lat(), lng: e.latLng.lng() },
@@ -69,7 +69,7 @@ console.log("name ",  e);
               });
 
               infoWindow.addListener('domready', (e) => {
-                render(<InfoWindow data={temp} />, document.getElementById('infoWindow'));
+                render(<InfoWindow data={marker} />, document.getElementById('infoWindow'));
               });
 
               windowArr.push(infoWindow);
