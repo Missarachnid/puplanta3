@@ -54,18 +54,17 @@ import { withRouter } from 'react-router-dom';
           this.props.parks.map((el) => {
             let temp = el;
             let marker = new window.google.maps.Marker({
-              position: { lat: el.lat, lng: el.lng },
+              position: { lat: temp.lat, lng: temp.lng },
               map: map,
-              title: el.title,
-              website: el.website,
-              address: el.address
+              title: temp.title,
+              website: temp.website,
+              address: temp.address
             });
             
             const createInfoWindow = (e, map) => {
-
               const infoWindow = new window.google.maps.InfoWindow({
                   content: '<div id="infoWindow" />',
-                  position: { lat: e.lat.lat(), lng: e.Lng.lng() },
+                  position: { lat: e.latLng.lat(), lng: e.latLng.lng() },
                   title: e.title,
                   maxWidth: 280
               });

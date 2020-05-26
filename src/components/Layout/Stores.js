@@ -51,6 +51,7 @@ class Stores extends React.Component {
 
           this.props.stores.map((el) => {
             let temp = el;
+            temp.title = temp.brand;
             let marker = new window.google.maps.Marker({
               position: { lat: temp.lat, lng: temp.lng },
               map: map,
@@ -69,7 +70,7 @@ class Stores extends React.Component {
               });
 
               infoWindow.addListener('domready', (e) => {
-                render(<InfoWindow data={marker} />, document.getElementById('infoWindow'));
+                render(<InfoWindow data={temp} />, document.getElementById('infoWindow'));
               });
 
               windowArr.push(infoWindow);
