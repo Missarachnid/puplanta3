@@ -30,19 +30,24 @@ const initial_signup = {
 class SignUpFormBase extends Component {
 
   onSubmit = event => {
-    const username = this.props.signupdata.username;
+    const displayName = this.props.signupdata.username;
     const email = this.props.signupdata.email;
     const passwordone = this.props.signupdata.passwordone;
+    //const votes = 'votes';
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, passwordone)
+      .doCreateUserWithEmailAndPassword(email, passwordone, displayName)
       .then(authUser => {
         // Create a user in your Firebase realtime database
+        const parks = '';
+        const stores = '';
         return this.props.firebase
           .user(authUser.user.uid)
           .set({
-            username,
-            email
+            displayName,
+            email,
+            parks,
+            stores
           });
       })
       .then(() => {

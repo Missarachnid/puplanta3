@@ -10,6 +10,7 @@ import { withRouter } from 'react-router-dom';
 class Stores extends React.Component {
  
   render = () => {
+   
         /* This dynamically loads cards from the park locations data */
         let stores = this.props.stores.map( el => (
           <div className='col-sm-12 col-md-6 col-lg-4' key={el.id}>

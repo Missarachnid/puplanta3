@@ -9,46 +9,228 @@ import { withFirebase } from '../Firebase';
 
 class Store extends React.Component {
   render = () => {
-
+  
     var temp;
-    /* retrieve data for store item clicked */
+    var userId = this.props.user.uid
+    var upVote, downVote, voteData;
+    
+    /* retrieve data for park item clicked */ 
     for(let i = 0; i < this.props.stores.length; i++){
       if(this.props.stores[i].id === this.props.match.params.id){
         temp = this.props.stores[i];
+        //storeId = temp.id;
+        upVote = parseInt(temp.votes.up);
+        downVote = parseInt(temp.votes.down);
+        console.log('parkId', temp.id)
       }
     }
 
+    //Paws Up Starts
     const votePawsUp = (e, id) => {
       e.preventDefault();
-      let upVote = parseInt(temp.votes.up);
-      upVote = upVote + 1;
-      let downVote = parseInt(temp.votes.down);
-      let ref = this.props.firebase.store(id);
-      ref.update({
-        'votes': {
-          'down': downVote,
-          'up': upVote
+      //var ref = this.props.firebase.stores(id); //can this be moved up top somewhere?
+      var tempVote = `users/${userId}/stores/${id}`;
+      var storeRef = this.props.firebase.db.ref('stores/' + id);
+      var userVotes = this.props.firebase.db.ref(tempVote);
+      console.log('userVotes', userVotes)
+
+      userVotes.once('value')
+      .then(snapshot => {
+        //return JSON.stringify(snapshot.child('stores').child(`${id}`).val());
+        return JSON.stringify(snapshot.val());
+      })
+      .then( data => {
+        voteData = data;
+        console.log('pawsUp', voteData);
+
+        switch(voteData) {
+          //Since I didn't originally add a votes tracker to the user db, this adds a vote property
+          case 'null':
+            console.log(null);
+            upVote = upVote + 1;
+            userVotes.set({
+              down: false,
+              up: true
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in switch case #1', err));
+            break;
+          //If a person previously downvoted and would like to change it to up
+          case JSON.stringify({down: true, up: false}):
+            console.log('{down: true, up: false}');
+            upVote = upVote + 1;
+            downVote = downVote - 1;
+            userVotes.update({
+              down: false,
+              up: true
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in switch case #2', err));
+            break;
+            //If a user previously voted up and would like to undo that
+          case JSON.stringify({down: false, up: true}):
+            console.log('{down: false, up: true}');
+            upVote = upVote - 1;
+            userVotes.update({
+              down: false,
+              up: false
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in switch case #3', err));
+            break;
+          //If a person has removed an up or down vote previously, and wants to upvote
+          case JSON.stringify({down: false, up: false}):
+            console.log('{down: false, up: false}');
+            upVote = upVote + 1;
+            userVotes.update({
+              down: false,
+              up: true
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in upvote case #4', err));
+            break;
+          default:
+            console.log('default case in switch', voteData);
+          break;
         }
       })
+      .then(() => {
+        this.props.history.push(ROUTES.STORES);
+      })
       .catch(err => console.log('Error updating votes ', err));
-      this.props.history.push(ROUTES.STORES);
     }
+    //Paws Up Ends
 
+    //Paws Down Starts
     const votePawsDown = (e, id) => {
       e.preventDefault();
-      let downVote = parseInt(temp.votes.down);
-      downVote = downVote + 1;
-      let upVote = parseInt(temp.votes.up);
-      let ref = this.props.firebase.store(id);
-      ref.update({
-        'votes': {
-          'down': downVote,
-          'up': upVote
+      var tempVote = `users/${userId}/stores/${id}`;
+      var storeRef = this.props.firebase.db.ref('stores/' + id);
+      var userVotes = this.props.firebase.db.ref(tempVote);
+      console.log('userVotesdown', userVotes)
+
+      userVotes.once('value')
+      .then(snapshot => {
+        //return JSON.stringify(snapshot.child('stores').child(`${id}`).val());
+        return JSON.stringify(snapshot.val());
+      })
+      .then( data => {
+        voteData = data;
+        console.log('pawsDown', voteData);
+
+        switch(voteData) {
+          //Since I didn't originally add a votes tracker to the user db, this adds a vote property
+          case 'null':
+            console.log(null);
+            downVote = downVote + 1;
+            userVotes.set({
+              down: true,
+              up: false
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in switch downVote case #1', err));
+            break;
+          //If a person previously downvoted and would undo that
+          case JSON.stringify({down: true, up: false}):
+            console.log('{down: true, up: false}');
+            downVote = downVote + 1;
+            upVote = upVote - 1;
+            userVotes.update({
+              down: false,
+              up: false
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in downVote s switch case #2', err));
+            break;
+            //If a user previously voted up and would like to undo that
+          case JSON.stringify({down: false, up: true}):
+            console.log('{down: false, up: true}');
+            upVote = upVote - 1;
+            userVotes.update({
+              down: false,
+              up: false
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in switch case #3', err));
+            break;
+          //If a person has removed an up or down vote previously, and wants to upvote
+          case JSON.stringify({down: false, up: false}):
+            console.log('{down: false, up: false}');
+            upVote = upVote + 1;
+            userVotes.update({
+              down: false,
+              up: true
+            })
+            .then(() => {
+              storeRef.update({
+                'votes': {
+                  'down': downVote,
+                  'up': upVote
+                }
+              })
+            })
+            .catch(err => console.log('Error in upvote case #4', err));
+            break;
+          default:
+            console.log('default case in switch', voteData);
+          break;
         }
       })
+      .then(() => {
+        this.props.history.push(ROUTES.STORES);
+      })
       .catch(err => console.log('Error updating votes ', err));
-      this.props.history.push(ROUTES.STORES);
     }
+    //Paws Down Ends
 
     return (
       <div className='jumbotron' id='park-item'>

@@ -29,7 +29,10 @@ class Main extends React.Component {
         />}
       />
       <Route path={ROUTES.PARK_ID} render={props => 
-        <ParkInfo parks={this.props.parks} />} />
+        <ParkInfo 
+          parks={this.props.parks} 
+          user={this.props.user} />} />
+
       <Route path={ROUTES.STORES} render={props => 
         <Stores
           user={this.props.user}
@@ -37,7 +40,7 @@ class Main extends React.Component {
           />}
         />
       <Route path={ROUTES.STORE_ID} render={props => 
-        <StoreInfo stores={this.props.stores} />} />
+        <StoreInfo stores={this.props.stores} user={this.props.user}/>} />
       <Route path={ROUTES.SIGN_IN} render={props => 
         <SignIn 
           signinChange={this.props.signinChange} 
