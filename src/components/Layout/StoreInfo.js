@@ -21,7 +21,7 @@ class Store extends React.Component {
         //storeId = temp.id;
         upVote = parseInt(temp.votes.up);
         downVote = parseInt(temp.votes.down);
-        console.log('parkId', temp.id)
+        //console.log('parkId', temp.id)
       }
     }
 
@@ -32,7 +32,7 @@ class Store extends React.Component {
       var tempVote = `users/${userId}/stores/${id}`;
       var storeRef = this.props.firebase.db.ref('stores/' + id);
       var userVotes = this.props.firebase.db.ref(tempVote);
-      console.log('userVotes', userVotes)
+      //console.log('userVotes', userVotes)
 
       userVotes.once('value')
       .then(snapshot => {
@@ -41,12 +41,12 @@ class Store extends React.Component {
       })
       .then( data => {
         voteData = data;
-        console.log('pawsUp', voteData);
+        //console.log('pawsUp', voteData);
 
         switch(voteData) {
           //Since I didn't originally add a votes tracker to the user db, this adds a vote property
           case 'null':
-            console.log(null);
+            //console.log(null);
             upVote = upVote + 1;
             userVotes.set({
               down: false,
@@ -64,7 +64,7 @@ class Store extends React.Component {
             break;
           //If a person previously downvoted and would like to change it to up
           case JSON.stringify({down: true, up: false}):
-            console.log('{down: true, up: false}');
+            //console.log('{down: true, up: false}');
             upVote = upVote + 1;
             downVote = downVote - 1;
             userVotes.update({
@@ -83,7 +83,7 @@ class Store extends React.Component {
             break;
             //If a user previously voted up and would like to undo that
           case JSON.stringify({down: false, up: true}):
-            console.log('{down: false, up: true}');
+            //console.log('{down: false, up: true}');
             upVote = upVote - 1;
             userVotes.update({
               down: false,
@@ -101,7 +101,7 @@ class Store extends React.Component {
             break;
           //If a person has removed an up or down vote previously, and wants to upvote
           case JSON.stringify({down: false, up: false}):
-            console.log('{down: false, up: false}');
+            //console.log('{down: false, up: false}');
             upVote = upVote + 1;
             userVotes.update({
               down: false,
@@ -118,7 +118,7 @@ class Store extends React.Component {
             .catch(err => console.log('Error in upvote case #4', err));
             break;
           default:
-            console.log('default case in switch', voteData);
+            //console.log('default case in switch', voteData);
           break;
         }
       })
@@ -135,7 +135,7 @@ class Store extends React.Component {
       var tempVote = `users/${userId}/stores/${id}`;
       var storeRef = this.props.firebase.db.ref('stores/' + id);
       var userVotes = this.props.firebase.db.ref(tempVote);
-      console.log('userVotesdown', userVotes)
+      //console.log('userVotesdown', userVotes)
 
       userVotes.once('value')
       .then(snapshot => {
@@ -144,12 +144,12 @@ class Store extends React.Component {
       })
       .then( data => {
         voteData = data;
-        console.log('pawsDown', voteData);
+        //console.log('pawsDown', voteData);
 
         switch(voteData) {
           //Since I didn't originally add a votes tracker to the user db, this adds a vote property
           case 'null':
-            console.log(null);
+            //console.log(null);
             downVote = downVote + 1;
             userVotes.set({
               down: true,
@@ -167,7 +167,7 @@ class Store extends React.Component {
             break;
           //If a person previously downvoted and would undo that
           case JSON.stringify({down: true, up: false}):
-            console.log('{down: true, up: false}');
+            //console.log('{down: true, up: false}');
             downVote = downVote + 1;
             upVote = upVote - 1;
             userVotes.update({
@@ -186,7 +186,7 @@ class Store extends React.Component {
             break;
             //If a user previously voted up and would like to undo that
           case JSON.stringify({down: false, up: true}):
-            console.log('{down: false, up: true}');
+            //console.log('{down: false, up: true}');
             upVote = upVote - 1;
             userVotes.update({
               down: false,
@@ -204,7 +204,7 @@ class Store extends React.Component {
             break;
           //If a person has removed an up or down vote previously, and wants to upvote
           case JSON.stringify({down: false, up: false}):
-            console.log('{down: false, up: false}');
+            //console.log('{down: false, up: false}');
             upVote = upVote + 1;
             userVotes.update({
               down: false,
@@ -221,7 +221,7 @@ class Store extends React.Component {
             .catch(err => console.log('Error in upvote case #4', err));
             break;
           default:
-            console.log('default case in switch', voteData);
+            //console.log('default case in switch', voteData);
           break;
         }
       })
