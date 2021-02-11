@@ -1,4 +1,4 @@
-#  Puplanta.com
+#  Puplanta.com - Work in Progress
 
 [Puplanta](http://puplanta.com/)
 
@@ -23,7 +23,7 @@ Clients can do the following:
 *  Auth and DB in Firebase
 *  Hosted on AWS
 ####  This iteration will add
-*  PWA with Workbox
+*  PWA with Workbox - currently has React generic version
 *  Testing with Jest
 
 ###  Improvements I will make 
